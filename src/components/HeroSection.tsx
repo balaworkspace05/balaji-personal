@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Github, Linkedin, MessageCircle, Download, ChevronDown } from 'lucide-react';
 import profileImage from '@/assets/profile-image.jpg';
-import heroBg from '@/assets/hero-bg.jpg';
+import heroBgImproved from '@/assets/hero-bg-improved.jpg';
 
 const HeroSection = () => {
   const [currentRole, setCurrentRole] = useState(0);
@@ -33,14 +33,27 @@ const HeroSection = () => {
     <section 
       id="home" 
       className="min-h-screen flex items-center justify-center relative overflow-hidden"
-      style={{
-        backgroundImage: `url(${heroBg})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat'
-      }}
     >
-      <div className="absolute inset-0 bg-background/80"></div>
+      {/* Enhanced Background with Gradient Overlay */}
+      <div 
+        className="absolute inset-0 opacity-30"
+        style={{
+          backgroundImage: `url(${heroBgImproved})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat'
+        }}
+      ></div>
+      
+      {/* Gradient Overlay */}
+      <div 
+        className="absolute inset-0"
+        style={{
+          background: 'linear-gradient(135deg, rgba(147, 51, 234, 0.1) 0%, rgba(59, 130, 246, 0.1) 50%, rgba(168, 85, 247, 0.1) 100%)'
+        }}
+      ></div>
+      
+      <div className="absolute inset-0 bg-background/70"></div>
       
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center max-w-4xl mx-auto">
@@ -75,49 +88,42 @@ const HeroSection = () => {
             </Button>
           </div>
 
-          {/* Profile Image */}
-          <div className="mb-8">
-            <img 
-              src={profileImage} 
-              alt="Balaji Mali"
-              className="w-32 h-32 rounded-full mx-auto glow-primary hover-scale border-4 border-white shadow-2xl"
-            />
-          </div>
+          {/* Profile Image - REMOVED */}
 
-          {/* Main Headlines */}
-          <h1 className="text-5xl md:text-7xl font-bold mb-4">
+          {/* Main Headlines - Recentered and Enhanced */}
+          <h1 className="text-6xl md:text-8xl font-bold mb-6 leading-tight">
             Hi, I'm Balaji 👋
           </h1>
           
-          <h2 className="text-xl md:text-2xl text-muted-foreground mb-8">
+          <h2 className="text-2xl md:text-3xl text-muted-foreground mb-12 font-medium">
             B.Sc. Data Science Student @ RV University
           </h2>
 
-          {/* Typewriter Animation */}
-          <div className="mb-12">
-            <h3 className="text-2xl md:text-3xl font-semibold mb-4">
+          {/* Enhanced Typewriter Animation */}
+          <div className="mb-16">
+            <h3 className="text-3xl md:text-4xl font-semibold mb-6">
               I'm passionate about
             </h3>
-            <div className="h-12 flex items-center justify-center">
-              <span className="text-3xl md:text-4xl font-bold bg-gradient-primary bg-clip-text text-transparent">
+            <div className="h-16 flex items-center justify-center">
+              <span className="text-4xl md:text-5xl font-bold bg-gradient-primary bg-clip-text text-transparent">
                 {roles[currentRole]}
               </span>
             </div>
           </div>
 
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+          {/* Enhanced CTA Buttons - Larger and Better Centered */}
+          <div className="flex flex-col sm:flex-row gap-6 justify-center mb-20">
             <Button 
               size="lg" 
-              className="bg-gradient-primary hover:scale-105 transition-transform duration-300 glow-primary"
+              className="bg-gradient-primary hover:scale-105 transition-transform duration-300 glow-primary text-lg px-8 py-4 h-auto"
             >
-              <Download className="w-5 h-5 mr-2" />
+              <Download className="w-6 h-6 mr-3" />
               Download Resume
             </Button>
             <Button 
               variant="outline" 
               size="lg" 
-              className="glass hover-scale"
+              className="glass hover-scale text-lg px-8 py-4 h-auto border-primary/30 hover:border-primary/50"
               onClick={() => scrollToSection('contact')}
             >
               Let's Connect
