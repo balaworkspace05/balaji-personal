@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
-import { Github, Linkedin, MessageCircle, Download, ChevronDown } from 'lucide-react';
+import { Download, ChevronDown } from 'lucide-react';
 import profileImage from '@/assets/profile-image.jpg';
 import heroBgImproved from '@/assets/hero-bg-improved.jpg';
 
@@ -57,39 +57,6 @@ const HeroSection = () => {
       
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center max-w-4xl mx-auto">
-          {/* Dynamic refresher section */}
-          <div className="flex justify-center gap-4 mb-8">
-            <Button 
-              variant="outline" 
-              size="sm" 
-              className="glass hover-scale"
-              onClick={() => window.open('https://github.com', '_blank')}
-            >
-              <Github className="w-4 h-4 mr-2" />
-              GitHub
-            </Button>
-            <Button 
-              variant="outline" 
-              size="sm" 
-              className="glass hover-scale"
-              onClick={() => window.open('https://linkedin.com', '_blank')}
-            >
-              <Linkedin className="w-4 h-4 mr-2" />
-              LinkedIn
-            </Button>
-            <Button 
-              variant="outline" 
-              size="sm" 
-              className="glass hover-scale"
-              onClick={() => window.open('https://wa.me/your-number', '_blank')}
-            >
-              <MessageCircle className="w-4 h-4 mr-2" />
-              WhatsApp
-            </Button>
-          </div>
-
-          {/* Profile Image - REMOVED */}
-
           {/* Main Headlines - Recentered and Enhanced */}
           <h1 className="text-6xl md:text-8xl font-bold mb-6 leading-tight">
             Hi, I'm Balaji 👋
